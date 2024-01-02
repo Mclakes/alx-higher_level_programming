@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-for b in range(ord('a'), ord('z') + 1):
-    if b != ord('e') and b != ord('q'):
-        print("{:c}".format(b), end="")
-
+for n in range(97, 123):
+    if (n == 101 or n == 113):
+        continue
+    print("{:c}".format(n), end='')
