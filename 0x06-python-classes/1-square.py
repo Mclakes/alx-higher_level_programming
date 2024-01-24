@@ -15,9 +15,3 @@ class Square:
     def area(self):
         """Calculate the area of the square."""
         return self.__size ** 2
-
-# Example usage:
-if __name__ == "__main__":
-    square = Square(5)
-    print("Area of the square:", square.area())
-
