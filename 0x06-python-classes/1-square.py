@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 
-"""Define a class Square."""
-
-
 class Square:
     """Represent a square."""
 
@@ -14,4 +11,13 @@ class Square:
             size (int): The size of the new square.
         """
         self.__size = size
+
+    def area(self):
+        """Calculate the area of the square."""
+        return self.__size ** 2
+
+# Example usage:
+if __name__ == "__main__":
+    square = Square(5)
+    print("Area of the square:", square.area())
 
