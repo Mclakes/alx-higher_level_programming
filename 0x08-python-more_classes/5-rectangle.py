@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-    """this represents a rectangle"""
+    """this represents a rectangle here"""
 
     def __init__(self, width=0, height=0):
         """Initializing this rectangle class
@@ -19,7 +19,7 @@ class Rectangle:
 
     @property
     def width(self):
-        """retrieves width attribute"""
+        """retrieves width attribute here"""
         return self.__width
 
     @width.setter
@@ -33,7 +33,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """retrieves height attribute"""
+        """retrieves height attribute here"""
         return self.__height
 
     @height.setter
@@ -46,17 +46,17 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Returns the area of the rectangle"""
+        """Returns the area of the rectangle here"""
         return (self.__width * self.__height)
 
     def perimeter(self):
-        """Returns the perimeter of the rectangle"""
+        """Returns the perimeter of the rectangle here"""
         if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self) -> str:
-        """presents a diagram of the rectangle defined for an object"""
+        """presents a diagram of the rectangle defined for an object heee"""
         if self.__width == 0 or self.__height == 0:
             return ("")
         rectangle = ""
@@ -68,9 +68,9 @@ class Rectangle:
         return (rectangle)
 
     def __repr__(self):
-        """returns a string representation of the rectangle"""
+        """returns a string representation of the rectangle hrer"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
-        """prints a message for every object that is deleted"""
+        """prints a message for every object that is deleted here"""
         print("Bye rectangle...")

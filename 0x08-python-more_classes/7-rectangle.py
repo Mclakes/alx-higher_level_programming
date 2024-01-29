@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-    """this represents a rectangle"""
+    """this represents a rectangle here"""
     number_of_instances = 0
     print_symbol = "#"
 
@@ -22,7 +22,7 @@ class Rectangle:
 
     @property
     def width(self):
-        """retrieves width attribute"""
+        """retrieves width attribute here"""
         return self.__width
 
     @width.setter
@@ -36,12 +36,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """retrieves height attribute"""
+        """retrieves height attribute here"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """sets height attribute"""
+        """sets height attribute here"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -78,6 +78,6 @@ class Rectangle:
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
-        """prints a message for every object that is deleted"""
+        """prints a message for every object that is deleted here"""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
