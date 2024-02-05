@@ -1,13 +1,18 @@
 #!/usr/bin/python3
-# -*- coding: UTF-8 -*-
 """
-101-add_attribute.py: Can I?
+method module
 """
 
 
-def add_attribute(self, name, new):
-    """function that adds a new attribute to an object if its possible"""
-    try:
-        self.name = new
-    except:
+def add_attribute(obj, objname, value):
+    """add attribute to object
+    args:
+        obj: class object
+        objname: object name
+        value: value of attribute
+    return:
+        na
+    """
+    if hasattr(obj, "__dict__") == False:
         raise TypeError("can't add new attribute")
+    setattr(obj, objname, value)
