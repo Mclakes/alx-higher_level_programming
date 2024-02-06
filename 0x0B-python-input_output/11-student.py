@@ -1,38 +1,37 @@
 #!/usr/bin/python3
-"""12-student.py - Student to JSON with filter"""
+""" Module that defines the class Student
+"""
 
 
 class Student:
-    """class Student that defines a student by:
-    Public instance attributes:
-        first_name
-        last_name
-        age
-    Instantiation with first_name, last_name and age:
-        def __init__(self, first_name, last_name, age):
-    Public method def to_json(self, attrs=None):
-        that retrieves a dictionary representation of a
-        Student instance (same as 10-class_to_json.py):
-            If attrs is a list of strings, only attribute
-            names contained in this list must be retrieved.
-            Otherwise, all attributes must be retrieved
-    """
+    """ Class to create student instances """
 
     def __init__(self, first_name, last_name, age):
+        """ Special method to initialize """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        new_dict = {}
+        """ Method that returns directory description """
+        obj = self.__dict__.copy()
         if type(attrs) is list:
-            for i in attrs:
-                if type(i) is not str:
-                    return self.__dict__
-                if i in self.__dict__:
-                    new_dict[i] = self.__dict__[i]
-            return new_dict
-        return self.__dict__
+
+            for item in attrs:
+                if type(item) is not str:
+                    return obj
+
+            d_list = {}
+
+            for iatr in range(len(attrs)):
+                for satr in obj:
+                    if attrs[iatr] == satr:
+                        d_list[satr] = obj[satr]
+            return d_list
+
+        return obj
 
     def reload_from_json(self, json):
-        
+        """ Replaces all attributes of the Student instance """
+        for atr in json:
+            self.__dict__[atr] = json[atr]
