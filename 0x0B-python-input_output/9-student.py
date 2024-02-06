@@ -1,14 +1,27 @@
 #!/usr/bin/python3
-import json
-import sys
-import os.path as path
+"""11-student.py - Student to JSON"""
 
-save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 
-basic_entry = []
-if path.exists('add_item.json') is True:
-    basic_entry = load_from_json_file('add_item.json')
-for i in range(1, len(sys.argv)):
-    basic_entry.append(sys.argv[i])
-save_to_json_file(basic_entry, 'add_item.json')
+class Student:
+    """class Student that defines a student by:
+
+    Public instance attributes:
+        first_name
+        last_name
+        age
+
+    Instantiation with first_name, last_name and age:
+        def __init__(self, first_name, last_name, age):
+
+    Public method def to_json(self):
+        that retrieves a dictionary representation of a
+        Student instance (same as 10-class_to_json.py)
+    """
+
+    def __init__(self, first_name, last_name, age):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def to_json(self):
+        return self.__dict__
